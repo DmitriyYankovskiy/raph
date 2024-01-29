@@ -72,7 +72,7 @@ impl<N: Clone, E: Clone> Pos<N, E> {
         self.idx = idx;
     }
 
-    pub fn get_me(&self) -> Idx{
+    pub fn get_me(&self) -> Idx {
         self.idx
     }
 
