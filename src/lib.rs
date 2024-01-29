@@ -11,7 +11,8 @@ pub struct Pos<N: Clone, E: Clone> {
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
-pub struct Node<N: Clone, E:Clone> {
+pub struct Node<N: Clone, E:Clone>
+where  {
     param: N,
     edges: Vec<(Idx, E)>
 }
@@ -19,10 +20,10 @@ pub struct Node<N: Clone, E:Clone> {
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
 pub struct Edge<E> {
-    v: Idx,
-    u: Idx,
-    u_to_v: E,
-    v_to_u: E,
+    pub v: Idx,
+    pub u: Idx,
+    pub u_to_v: E,
+    pub v_to_u: E,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
