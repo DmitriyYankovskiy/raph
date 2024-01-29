@@ -72,6 +72,10 @@ impl<N: Clone, E: Clone> Pos<N, E> {
         self.idx = idx;
     }
 
+    pub fn get_me(&self) -> Idx{
+        self.idx
+    }
+
     pub fn get_adjacent(&self) -> Vec<Idx> {
         let mut adjacent = Vec::<Idx>::new();
         for (v, _) in (*self.graph.borrow()).get_node(self.idx).edges {
