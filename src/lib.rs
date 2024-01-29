@@ -3,12 +3,20 @@ use std::{cell::RefCell, rc::Rc, usize};
 use serde::{Serialize, Deserialize};
 pub type Idx = usize;
 
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 pub struct Pos<N: Clone, E: Clone> {
     idx: Idx,
     graph: Rc<RefCell<Graph<N, E>>>,
 }
 
+impl<N: Clone, E: Clone> Clone for Pos<N, E> {
+    fn clone(&self) -> Self {
+        Pos {
+            idx: self.idx.clone(),
+            graph: self.graph.clone(),
+        }
+    }
+} 
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 #[serde(rename_all = "camelCase")]
