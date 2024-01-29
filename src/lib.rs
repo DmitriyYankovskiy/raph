@@ -3,6 +3,7 @@ use std::{cell::RefCell, clone, rc::Rc, usize};
 use serde::{Serialize, Deserialize};
 pub type Idx = usize;
 
+#[derive(Debug, Clone)]
 pub struct Pos<N: Clone, E: Clone> {
     idx: Idx,
     graph: Rc<RefCell<Graph<N, E>>>,
